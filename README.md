@@ -12,8 +12,9 @@ ___
 - La Configuration SSL/TLS
 
 ___
-### La Definition:
+### La Definition: 
 GlassFish est le nom du serveur d'applications Java qui permet aux développeurs de générer des technologies d'entreprise pratiques et évolutives, ainsi que des services supplémentaires pouvant être installés en fonction de leurs préférences.
+
 Le GlassFish est un logiciel Libre sous licence GNU 
-  -GPL (General Public License) </br>
-  -CDDL (Common Development and Distribution License)
+  - GPL (General Public License) 
+  - CDDL (Common Development and Distribution License)
