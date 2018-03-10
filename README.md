@@ -1,9 +1,9 @@
 [logo]: https://github.com/mouhamad-khalil/GlassFish/glassfish.png "GlassFish"
 
-## GlassFish
+# GlassFish
 
 ___
-### Plan
+## Plan
 - La Definition du serveur 
 - Historique
 - La Fonctionalité
@@ -13,8 +13,9 @@ ___
 - Dépoliment d'une application 
 - La Configuration SSL/TLS
 
+### Vous pouvez visiter aussi ma page gihub: https://mouhamad-khalil.github.io/GlassFish/
 ___
-### La Definition: 
+## La Definition: 
 GlassFish est le nom du serveur d'applications Java qui permet aux développeurs de générer des technologies d'entreprise pratiques et évolutives, ainsi que des services supplémentaires pouvant être installés en fonction de leurs préférences.
 
 Le GlassFish est un logiciel Libre sous licence GNU 
@@ -22,7 +23,7 @@ Le GlassFish est un logiciel Libre sous licence GNU
   - CDDL (Common Development and Distribution License)
   
 ___
-### Start/Stop/Restart du serveur 
+## Start/Stop/Restart du serveur 
 Pour démarrer(Start) le GlassFish Server:
 
 ```asadmin start-domain non-domain```
@@ -36,30 +37,30 @@ Pour redémarrer(Restart) le GlassFish Server:
 ```asadmin restart-domain nom-domain```
 
 ___
-### Déploiment d'une application:
+## Déploiment d'une application:
 *Au moins un domaine GlassFish Server doit être démarré avant de déployer une application.*
 
-##### Pour déployer une application en utilisant *la ligne de commande:*
+#### Pour déployer une application en utilisant *la ligne de commande:*
 
 ```asadmin deploy nom-application```
 
 Exemple: ```asadmin deploy sample-dir/hello.war```
 
-##### Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
+#### Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
 
 ```http://localhost:8080/hello```
 
-##### Pour lister les applications déployées:
+#### Pour lister les applications déployées:
 
 ```asadmin list-applications```
 
-##### Pour annuler le déploiement d'une application:
+#### Pour annuler le déploiement d'une application:
 
 ```asadmin undeploy nom-application```
 
 Exemple: ```asadmin undeploy hello```
 
-##### Déploiement d'une application à l'aide de *la console d'administration:*
+### Déploiement d'une application à l'aide de *la console d'administration:*
 
 1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
 
@@ -89,3 +90,61 @@ Exemple: ```asadmin undeploy hello```
 4. Supprimer ou désactiver l'application:
     - Pour supprimer l'application, cliquez sur le bouton "Undeploy".
     - Pour désactiver l'application, cliquez sur le bouton "Disable".
+
+## Configuration SSL/TLS:
+***Il faut générer un certificat à l'aide de keytool***
+1. Accédez au répertoire contenant les fichiers keystore et truststore.
+<blockquote>
+  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
+</blockquote>
+
+2. Générez le certificat dans le fichier keystore, keystore.jks, en utilisant le format de commande suivant:
+
+```
+keytool -genkey -alias keyAlias-keyalg RSA
+ -keypass changeit
+ -storepass changeit
+keystore keystore.jks
+```
+<blockquote>
+  Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
+  
+  Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
+</blockquote>
+
+3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
+<blockquote>
+  
+  ```
+  keytool -export -alias keyAlias-storepass changeit
+ -file server.cer
+ -keystore keystore.jks
+  ```
+</blockquote>
+
+4. Créez le fichier truststore cacerts.jks et ajoutez le certificat au fichier de clés certifiées, en utilisant le format de commande suivant:
+
+``` 
+keytool -import -v -trustcacerts
+-alias keyAlias
+ -file server.cer
+-keystore cacerts.jks
+ -keypass changeit
+```
+
+<blockquote>
+  Les informations sur le certificat sont affichées et une invite vous demande si vous souhaitez approuver le certificat.
+</blockquote>
+
+5. Tapez yes, puis appuyez sur "Entre".
+
+<blockquote>
+Des informations similaires aux suivantes sont affichées:
+  
+  ```
+  Certificate was added to keystore
+[Saving cacerts.jks]
+  ```
+</blockquote>
+
+6. Pour appliquer vos modifications, redémarrez le Serveur.
