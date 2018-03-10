@@ -1,4 +1,4 @@
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "GlassFish"
+[logo]: https://github.com/mouhamad-khalil/GlassFish/glassfish.png "GlassFish"
 
 ## GlassFish
 
@@ -9,6 +9,8 @@ ___
 - La Fonctionalité
 - Les Avantages
 - L'installation
+- Start/Stop/Restart du serveur
+- Dépoliment d'une application 
 - La Configuration SSL/TLS
 
 ___
@@ -18,3 +20,72 @@ GlassFish est le nom du serveur d'applications Java qui permet aux développeurs
 Le GlassFish est un logiciel Libre sous licence GNU 
   - GPL (General Public License) 
   - CDDL (Common Development and Distribution License)
+  
+___
+### Start/Stop/Restart du serveur 
+Pour démarrer(Start) le GlassFish Server:
+
+```asadmin start-domain non-domain```
+
+Pour stopper(Stop) le GlassFish Server: 
+
+```asadmin stop-domain nom-domain```
+
+Pour redémarrer(Restart) le GlassFish Server:
+
+```asadmin restart-domain nom-domain```
+
+___
+### Déploiment d'une application:
+*Au moins un domaine GlassFish Server doit être démarré avant de déployer une application.*
+
+##### Pour déployer une application en utilisant *la ligne de commande:*
+
+```asadmin deploy nom-application```
+
+Exemple: ```asadmin deploy sample-dir/hello.war```
+
+##### Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
+
+```http://localhost:8080/hello```
+
+##### Pour lister les applications déployées:
+
+```asadmin list-applications```
+
+##### Pour annuler le déploiement d'une application:
+
+```asadmin undeploy nom-application```
+
+Exemple: ```asadmin undeploy hello```
+
+##### Déploiement d'une application à l'aide de *la console d'administration:*
+
+1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
+
+   ```http://localhost:4848```
+2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
+3. Cliquez sur le boutton "Deploy".
+4. Sélectionnez "Packaged File to Be Uploaded to the Server", puis cliquez sur "Browse".
+5. Accédez à l'emplacement dans lequel vous avez enregistré l'application, sélectionnez le fichier et cliquez sur Ouvrir.
+6. Spécifiez une description dans le champ Description.
+7. Acceptez les autres paramètres par défaut et cliquez sur OK.
+8. Cochez la case en regard de l'application et cliquez sur le lien "Launch" pour lancer l'application.
+
+  *L'URL par défaut de l'application est:```localhost:8080:hello```*
+
+#### Pour afficher les applications déployées dans la console d'administration:
+1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
+
+   ```http://localhost:4848```
+2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
+
+#### Pour annuler le déploiement d'une application à l'aide de la console d'administration:
+1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
+
+   ```http://localhost:4848```
+2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
+3. Cochez la case en regard de l'application que vous voulez l'annulée 
+4. Supprimer ou désactiver l'application:
+    - Pour supprimer l'application, cliquez sur le bouton "Undeploy".
+    - Pour désactiver l'application, cliquez sur le bouton "Disable".
