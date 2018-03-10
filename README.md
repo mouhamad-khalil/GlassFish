@@ -98,6 +98,7 @@ Exemple: ```asadmin undeploy hello```
 1. Accédez au répertoire contenant les fichiers keystore et truststore.
 >  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
 2. Générez le certificat dans le fichier keystore, keystore.jks, en utilisant le format de commande suivant:
+
 ``
 keytool -genkey -alias keyAlias-keyalg RSA
  -keypass changeit
@@ -105,18 +106,14 @@ keytool -genkey -alias keyAlias-keyalg RSA
 keystore keystore.jks
 ``
 > Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
-  
->Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
+Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
-<blockquote>
   
   ``
   keytool -export -alias keyAlias-storepass changeit
  -file server.cer
  -keystore keystore.jks
   ``
-</blockquote>
-
 4. Créez le fichier truststore cacerts.jks et ajoutez le certificat au fichier de clés certifiées, en utilisant le format de commande suivant:
 
 ``
@@ -126,20 +123,14 @@ keytool -import -v -trustcacerts
 -keystore cacerts.jks
  -keypass changeit
 ``
-
-<blockquote>
-  Les informations sur le certificat sont affichées et une invite vous demande si vous souhaitez approuver le certificat.
-</blockquote>
+>Les informations sur le certificat sont affichées et une invite vous demande si vous souhaitez approuver le certificat.
 
 5. Tapez yes, puis appuyez sur "Entre".
-
-<blockquote>
-Des informations similaires aux suivantes sont affichées:
+>Des informations similaires aux suivantes sont affichées:
   
   ```
   Certificate was added to keystore
 [Saving cacerts.jks]
   ```
-</blockquote>
-
+  
 6. Pour appliquer vos modifications, redémarrez le Serveur.
