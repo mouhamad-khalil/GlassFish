@@ -9,7 +9,7 @@ ___
 - Les Avantages
 - L'installation
 - Start/Stop/Restart du serveur
-- Dépoliment d'une application 
+- Déploiement d'une application 
 - La Configuration SSL/TLS
 
 ### Vous pouvez visiter aussi ma page github: https://mouhamad-khalil.github.io/GlassFish/
@@ -36,7 +36,7 @@ Pour redémarrer(Restart) le GlassFish Server:
 ```asadmin restart-domain nom-domain```
 
 ___
-## Déploiment d'une application:
+## Déploiement d'une application:
 *Au moins un domaine GlassFish Server doit être démarré avant de déployer une application.*
 
 #### Pour déployer une application en utilisant *la ligne de commande:*
@@ -87,7 +87,7 @@ Exemple: ```asadmin undeploy hello```
 
    ``http://localhost:4848``
 2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
-3. Cochez la case en regard de l'application que vous voulez l'annulée 
+3. Cochez la case en regard de l'application que vous voulez annuler 
 4. Supprimer ou désactiver l'application:
     - Pour supprimer l'application, cliquez sur le bouton "Undeploy".
     - Pour désactiver l'application, cliquez sur le bouton "Disable".
@@ -100,34 +100,36 @@ Exemple: ```asadmin undeploy hello```
 2. Générez le certificat dans le fichier keystore, keystore.jks:
 
 ```
-keytool -genkey -alias keyAlias-keyalg RSA
+keytool -genkey -alias keyAlias 
+ -keyalg RSA
  -keypass changeit
  -storepass changeit
-keystore keystore.jks
+ -keystore keystore.jks
 ```
 > Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
 Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
 
-  ```
-  keytool -export -alias keyAlias-storepass changeit
+```
+keytool -export -alias keyAlias
+ -storepass changeit
  -file server.cer
  -keystore keystore.jks
-  ```
+```
 4. Créez le fichier truststore cacerts.jks et ajoutez le certificat au fichier de clés certifiées, en utilisant le format de commande suivant:
 
 ```
 keytool -import -v -trustcacerts
--alias keyAlias
+ -alias keyAlias
  -file server.cer
--keystore cacerts.jks
+ -keystore cacerts.jks
  -keypass changeit
 ```
 >Les informations sur le certificat sont affichées et une invite vous demande si vous souhaitez approuver le certificat.
-5. Tapez yes, puis appuyez sur "Entre".
+5. Tapez yes, puis appuyez sur "Enter".
 >Des informations similaires aux suivantes sont affichées:
   ```
-  Certificate was added to keystore
+Certificate was added to keystore
 [Saving cacerts.jks]
   ```
 6. Pour appliquer vos modifications, redémarrez le Serveur.
