@@ -48,7 +48,9 @@ Exemple: ``asadmin deploy sample-dir/hello.war``
 
 #### Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
 
-``http://localhost:8080/hello``
+``
+http://localhost:8080/hello
+``
 
 #### Pour lister les applications déployées:
 
@@ -64,7 +66,7 @@ Exemple: ```asadmin undeploy hello```
 
 1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
 
-   ```http://localhost:4848```
+   ``http://localhost:4848``
 2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
 3. Cliquez sur le boutton "Deploy".
 4. Sélectionnez "Packaged File to Be Uploaded to the Server", puis cliquez sur "Browse".
@@ -73,18 +75,18 @@ Exemple: ```asadmin undeploy hello```
 7. Acceptez les autres paramètres par défaut et cliquez sur OK.
 8. Cochez la case en regard de l'application et cliquez sur le lien "Launch" pour lancer l'application.
 
-  *L'URL par défaut de l'application est:```localhost:8080:hello```*
+  *L'URL par défaut de l'application est:``localhost:8080:hello``*
 
 #### Pour afficher les applications déployées dans la console d'administration:
 1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
 
-   ```http://localhost:4848```
+   ``http://localhost:4848``
 2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
 
 #### Pour annuler le déploiement d'une application à l'aide de la console d'administration:
 1. Lancez la console d'administration en tapant l'URL suivante dans votre navigateur.
 
-   ```http://localhost:4848```
+   ``http://localhost:4848``
 2. Cliquez sur le nœud "Applications" dans l'arborescence sur la gauche.
 3. Cochez la case en regard de l'application que vous voulez l'annulée 
 4. Supprimer ou désactiver l'application:
@@ -97,7 +99,6 @@ Exemple: ```asadmin undeploy hello```
 <blockquote>
   Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
 </blockquote>
-
 2. Générez le certificat dans le fichier keystore, keystore.jks, en utilisant le format de commande suivant:
 
 ```
@@ -111,7 +112,6 @@ keystore keystore.jks
   
   Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 </blockquote>
-
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
 <blockquote>
   
