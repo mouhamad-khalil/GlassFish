@@ -1,5 +1,4 @@
-[logo]: https://github.com/mouhamad-khalil/GlassFish/glassfish.png "GlassFish"
-
+![GlassFish Logo](/glassfish.png)
 # GlassFish
 
 ___
@@ -95,23 +94,19 @@ Exemple: ```asadmin undeploy hello```
 
 ## Configuration SSL/TLS:
 ***Il faut générer un certificat à l'aide de keytool***
-1. Accédez au répertoire contenant les fichiers keystore et truststore.
-<blockquote>
-  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
-</blockquote>
-2. Générez le certificat dans le fichier keystore, keystore.jks, en utilisant le format de commande suivant:
 
-```
+1. Accédez au répertoire contenant les fichiers keystore et truststore.
+>  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
+2. Générez le certificat dans le fichier keystore, keystore.jks, en utilisant le format de commande suivant:
+``
 keytool -genkey -alias keyAlias-keyalg RSA
  -keypass changeit
  -storepass changeit
 keystore keystore.jks
-```
-<blockquote>
-  Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
+``
+> Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
   
-  Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
-</blockquote>
+>Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
 <blockquote>
   
