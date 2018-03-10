@@ -13,7 +13,7 @@ ___
 - Dépoliment d'une application 
 - La Configuration SSL/TLS
 
-### Vous pouvez visiter aussi ma page gihub: https://mouhamad-khalil.github.io/GlassFish/
+### Vous pouvez visiter aussi ma page github: https://mouhamad-khalil.github.io/GlassFish/
 ___
 ## La Definition: 
 GlassFish est le nom du serveur d'applications Java qui permet aux développeurs de générer des technologies d'entreprise pratiques et évolutives, ainsi que des services supplémentaires pouvant être installés en fonction de leurs préférences.
@@ -44,11 +44,11 @@ ___
 
 ```asadmin deploy nom-application```
 
-Exemple: ```asadmin deploy sample-dir/hello.war```
+Exemple: ``asadmin deploy sample-dir/hello.war``
 
 #### Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
 
-```http://localhost:8080/hello```
+``http://localhost:8080/hello``
 
 #### Pour lister les applications déployées:
 
