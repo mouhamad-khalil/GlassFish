@@ -115,22 +115,22 @@ keystore keystore.jks
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
 <blockquote>
   
-  ```
+  ``
   keytool -export -alias keyAlias-storepass changeit
  -file server.cer
  -keystore keystore.jks
-  ```
+  ``
 </blockquote>
 
 4. Créez le fichier truststore cacerts.jks et ajoutez le certificat au fichier de clés certifiées, en utilisant le format de commande suivant:
 
-``` 
+``
 keytool -import -v -trustcacerts
 -alias keyAlias
  -file server.cer
 -keystore cacerts.jks
  -keypass changeit
-```
+``
 
 <blockquote>
   Les informations sur le certificat sont affichées et une invite vous demande si vous souhaitez approuver le certificat.
