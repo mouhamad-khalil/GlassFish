@@ -133,3 +133,9 @@ Certificate was added to keystore
 [Saving cacerts.jks]
   ```
 6. Pour appliquer vos modifications, redémarrez le Serveur.
+
+7. Pour accéder à l'application hello en tapant l'URL suivante dans votre navigateur:
+
+``
+https://localhost:8181/hello
+``
