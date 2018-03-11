@@ -98,7 +98,6 @@ Exemple: ```asadmin undeploy hello```
 1. Accédez au répertoire contenant les fichiers keystore et truststore.
 >  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
 2. Générez le certificat dans le fichier keystore, keystore.jks:
-
 ```
 keytool -genkey -alias keyAlias 
  -keyalg RSA
@@ -109,7 +108,6 @@ keytool -genkey -alias keyAlias
 > Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
 Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
-
 ```
 keytool -export -alias keyAlias
  -storepass changeit
@@ -117,7 +115,6 @@ keytool -export -alias keyAlias
  -keystore keystore.jks
 ```
 4. Créez le fichier truststore cacerts.jks et ajoutez le certificat au fichier de clés certifiées, en utilisant le format de commande suivant:
-
 ```
 keytool -import -v -trustcacerts
  -alias keyAlias
