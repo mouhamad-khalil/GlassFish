@@ -93,7 +93,7 @@ Exemple: ```asadmin undeploy hello```
     - Pour désactiver l'application, cliquez sur le bouton "Disable".
 
 ## Configuration SSL/TLS:
-***Il faut générer un certificat à l'aide de keytool***
+***Il faut générer un certificat à l'aide de keytool OU acheter un***
 
 1. Accédez au répertoire contenant les fichiers keystore et truststore.
 >  Générez toujours le certificat dans le répertoire contenant les fichiers keystore et truststore. La valeur par défaut est domain-dir / config.
