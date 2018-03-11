@@ -23,15 +23,15 @@ Le GlassFish est un logiciel Libre sous licence GNU
   
 ___
 ## Start/Stop/Restart du serveur 
-Pour démarrer(Start) le GlassFish Server:
+Pour démarrer/Start le GlassFish Server:
 
 ```asadmin start-domain non-domain```
 
-Pour stopper(Stop) le GlassFish Server: 
+Pour stopper/Stop le GlassFish Server: 
 
 ```asadmin stop-domain nom-domain```
 
-Pour redémarrer(Restart) le GlassFish Server:
+Pour redémarrer/Restart le GlassFish Server:
 
 ```asadmin restart-domain nom-domain```
 
