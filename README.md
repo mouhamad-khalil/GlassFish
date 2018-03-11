@@ -106,7 +106,7 @@ keytool -genkey -alias keyAlias
  -keystore keystore.jks
 ```
 > Utilisez un nom unique comme votre keyAlias. Si vous avez modifié le mot de passe du fichier de clés ou de la clé privée par    défaut (changeit), remplacez le nouveau mot de passe par changeit. L'alias de mot de passe par défaut est s1as.
-Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
+>Une invite s'affiche pour vous demander votre nom, votre organisation et d'autres informations.
 3. Exportez le certificat généré dans le fichier server.cer, en utilisant le format de commande suivant:
 ```
 keytool -export -alias keyAlias
