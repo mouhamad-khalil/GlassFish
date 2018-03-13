@@ -16,8 +16,7 @@ ___
 ___
 ## La Présentation: 
 
-<iframe src="https://drive.google.com/viewerng/viewer?
-url=https://library.osu.edu/assets/Documents/SEL/QuickConvertWordPDF.pdf?
+<iframe src="https://drive.google.com/file/d/1eREZeqq4O7OxXB8V0Yb-hzNJwiJcW8tP/view?usp=sharing?
 pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="400px" height="300px"  />
 ___
 ## Start/Stop/Restart du serveur 
