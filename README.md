@@ -16,8 +16,7 @@ ___
 ___
 ## La Présentation: 
 
-<iframe src="https://drive.google.com/file/d/1eREZeqq4O7OxXB8V0Yb-hzNJwiJcW8tP/view?usp=sharing?
-pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="400px" height="300px"  />
+<iframe src="https://drive.google.com/file/d/1eREZeqq4O7OxXB8V0Yb-hzNJwiJcW8tP/view?usp=sharing?" width="400px" height="300px"  />
 ___
 ## Start/Stop/Restart du serveur 
 Pour démarrer/Start le GlassFish Server:
