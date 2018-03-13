@@ -14,13 +14,10 @@ ___
 
 ### Vous pouvez visiter aussi ma page github: https://mouhamad-khalil.github.io/GlassFish/
 ___
-## La Definition: 
-GlassFish est le nom du serveur d'applications Java qui permet aux développeurs de générer des technologies d'entreprise pratiques et évolutives, ainsi que des services supplémentaires pouvant être installés en fonction de leurs préférences.
+## La Présentation: 
 
-Le GlassFish est un logiciel Libre sous licence GNU 
-  - GPL (General Public License) 
-  - CDDL (Common Development and Distribution License)
-  
+<iframe src = "https://drive.google.com/file/d/1eREZeqq4O7OxXB8V0Yb-hzNJwiJcW8tP/view?usp=sharing" ></iframe>
+
 ___
 ## Start/Stop/Restart du serveur 
 Pour démarrer/Start le GlassFish Server:
